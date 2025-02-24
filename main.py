@@ -22,7 +22,7 @@ def hex_to_lab(hex_list):
     return np.array(lab_list)
 
 # === Streamlit UI ===
-st.title("L* a* b* 色空間の3D可視化とCSV出力")
+st.title("L* a* b* 色空間の3D可視化とCSV出力_Winter")
 
 # === HEXカラーリスト（指定された色_Winter） ===
 hex_colors = [
