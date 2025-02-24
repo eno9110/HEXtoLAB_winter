@@ -22,7 +22,7 @@ def hex_to_lab(hex_list):
     return np.array(lab_list)
 
 # === Streamlit UI ===
-st.title("L*a*b* 色空間の3D可視化とCSV出力")
+st.title("L* a* b* 色空間の3D可視化とCSV出力")
 
 # === HEXカラーリスト（指定された色_Winter） ===
 hex_colors = [
@@ -46,7 +46,7 @@ csv_filename = 'hex_to_lab_colors_winter.csv'
 df.to_csv(csv_filename, index=False)
 
 # === CSVダウンロードボタン ===
-st.write("### HEXカラーとL*a*b*座標のCSV出力_winter")
+st.write("### HEXカラーとL* a* b* 座標のCSV出力_winter")
 st.download_button(
     label="CSVをダウンロード",
     data=df.to_csv(index=False).encode('utf-8'),
@@ -96,5 +96,5 @@ fig.update_layout(
 )
 
 # === Streamlitで3Dグラフ表示 ===
-st.write("### L*a*b* 色空間 3D可視化_winter")
+st.write("### L* a* b* 色空間 3D可視化_winter")
 st.plotly_chart(fig)
