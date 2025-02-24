@@ -1,10 +1,11 @@
+#Winter
 import streamlit as st
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 from skimage import color
 
-st.title('HEXtoLAB')
+st.title('HEXtoLAB_Winter')
 
 # === HEXカラーをL*a*b*に変換する関数 ===
 def hex_to_lab(hex_list):
@@ -23,7 +24,7 @@ def hex_to_lab(hex_list):
 # === Streamlit UI ===
 st.title("L*a*b* 色空間の3D可視化とCSV出力")
 
-# === HEXカラーリスト（指定された色） ===
+# === HEXカラーリスト（指定された色_Winter） ===
 hex_colors = [
     "#ffffff", "#000000", "#d3d3d3", "#b5b5b5", "#9096a4",
     "#4c4c4c", "#272564", "#2234c7", "#2413b9", "#f3190f",
@@ -41,11 +42,11 @@ df = pd.DataFrame(lab_colors, columns=['L*', 'a*', 'b*'])
 df.insert(0, 'HEX', hex_colors)
 
 # === CSVファイルに保存 ===
-csv_filename = 'hex_to_lab_colors.csv'
+csv_filename = 'hex_to_lab_colors_winter.csv'
 df.to_csv(csv_filename, index=False)
 
 # === CSVダウンロードボタン ===
-st.write("### HEXカラーとL*a*b*座標のCSV出力")
+st.write("### HEXカラーとL*a*b*座標のCSV出力_winter")
 st.download_button(
     label="CSVをダウンロード",
     data=df.to_csv(index=False).encode('utf-8'),
@@ -95,5 +96,5 @@ fig.update_layout(
 )
 
 # === Streamlitで3Dグラフ表示 ===
-st.write("### L*a*b* 色空間 3D可視化")
+st.write("### L*a*b* 色空間 3D可視化_winter")
 st.plotly_chart(fig)
